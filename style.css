@@ -18,18 +18,21 @@ body {
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 1292px;
     margin: 40px auto;
-    background-color: #eee;
     height: 356px;
     border-radius: 15px;
+}
+
+.container_button {
+    height: fit-content;
 }
 
 .container_banner {
     background-image: url(./img/banner.webp);
     background-size: cover;
     padding: 64px 40px 32px;
-
+    max-width: 1220px;
 }
 
 .container_form {
@@ -243,6 +246,30 @@ fieldset {
   .custom-checkbox:disabled+label::before {
     background-color: #e9ecef;
   }
+
+
+  .button {
+    height: 52px;
+    width: fit-content;
+    padding: 0px 32px;
+    box-sizing: border-box;
+    border: 2px solid rgb(227, 6, 17);
+    border-radius: 8px;
+    background-color: rgb(227, 6, 17);
+    color: rgb(255, 255, 255);
+    transition: border-color 200ms ease 0s, background-color 200ms ease 0s;
+    outline: none;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .disabled {
+    background-color: #e1e1e1;
+    color: #000;
+    border: none;
+  }
+
 
 
 @media screen and (max-width:414px) {
