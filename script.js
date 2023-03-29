@@ -1,48 +1,6 @@
 const fpep = document.querySelector('.checkbox');
 const fpepName = document.querySelector('.fpepName');
-
-document.addEventListener('click', (e) => {
-    if(e.target.classList.contains('checkbox')) {
-        fpepName.classList.toggle('invisible');
-    } 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let theForm = document.forms.the_form;
-
-const checkPublicYes = document.getElementById('publicYes');
-const checkPublicNo = document.getElementById('publicNo');
-
 let theFormName = theForm.first_name;
 let theFormLastName = theForm.last_name;
 let theFormMiddleName = theForm.middle_name;
@@ -69,10 +27,21 @@ let fpepLastName = theForm.fpep_last_name;
 let fpepFirstName = theForm.fpep_first_name;
 let fpepMiddleName = theForm.fpep_middle_name;
 
-let submitButton= document.querySelector('.submit_button');
+let nextButton= document.querySelector('.button_next');
 
-theForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('click', (e) => {
+    if(e.target.classList.contains('checkbox')) {
+        fpepName.classList.toggle('invisible');
+    }
+})
+
+console.log(fpepFirstName)
+console.log(nextButton)
+
+theForm.addEventListener('submit', function(e) {
+    e.preventDefault()
+    console.log('yes')
+   
 
     let client = {
         first_name: theFormName.value,
@@ -100,10 +69,47 @@ theForm.addEventListener('submit', function(event) {
     
     localStorage.setItem('client', JSON.stringify(client))
     
-    
+    console.log(client);
     window.location.href='test.html';
 
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const checkPublicYes = document.getElementById('publicYes');
+const checkPublicNo = document.getElementById('publicNo');
+
+
+
+
+
+
 
   /* 
   if (checkPublicNo.checked){
@@ -118,7 +124,7 @@ theForm.addEventListener('submit', function(event) {
         })
     }
 }
-*/
+
 theForm.addEventListener('click', function(){
     if (checkPublicNo.checked){
         fpepPosition.setAttribute('disabled', true);
@@ -142,5 +148,5 @@ theForm.addEventListener('click', function(){
     }
 })
 
-
+*/
 
