@@ -250,9 +250,9 @@ fieldset {
         grid-template-columns: 1fr;
         width: 100%;
     }
-
+	
     .input_placeOfBirth {
-        width: 238px;
+        width: 272px;
     }
 
     .subtitle {
