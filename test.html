@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <table class="client-info-table">
+            <tr class="tr-dark">
+                <td colspan="2" >Персональные данные</td>
+            </tr>
+            <tr>
+                <td>Фамилия</td>
+                <td class="input__info surname"></td>
+            </tr>
+            <tr>
+                <td>Имя</td>
+                <td class="input__info name"></td>
+            </tr>
+            <tr>
+                <td>Отчество</td>
+                <td class="input__info middlename"></td>
+            </tr>
+            <tr>
+                <td>Дата рождения</td>
+                <td class="input__info date-of-birth"></td>
+            </tr>
+            <tr>
+                <td>Пол</td>
+                <td class="input__info gender"></td>
+            </tr>
+            <tr>
+                <td>Гражданство</td>
+                <td class="input__info citizenship"></td>
+            </tr>
+            <tr>
+                <td>Место рождения</td>
+                <td class="input__info place-of-birth"></td>
+            </tr>
+
+            <tr class="tr-dark">
+                <td colspan="2" >Документы</td>
+            </tr>
+
+            <tr>
+                <td>Тип документа</td>
+                <td class="input__info doc-type"></td>
+            </tr>
+            <tr>
+                <td>Номер документа</td>
+                <td class="input__info doc-number"></td>
+            </tr>
+            <tr>
+                <td>Кем выдан</td>
+                <td class="input__info doc-issued"></td>
+            </tr>
+            <tr>
+                <td>Дата выдачи</td>
+                <td class="input__info doc-date-issued"></td>
+            </tr>
+            <tr>
+                <td>Дата истечения срока</td>
+                <td class="input__info doc-date-expired"></td>
+            </tr>
+
+            <tr class="tr-dark">
+                <td colspan="2" >Контакты</td>
+            </tr>
+
+            <tr>
+                <td>Адрес</td>
+                <td class="input__info address"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td class="input__info email"></td>
+            </tr>
+            <tr>
+                <td>Телефон</td>
+                <td class="input__info phone"></td>
+            </tr>
+
+            <tr class="tr-dark">
+                <td colspan="2" >Тип карты</td>
+            </tr>
+
+            <tr>
+                <td>Платежная система</td>
+                <td class="input__info payment-system"></td>
+            </tr>
+            <tr>
+                <td>Валюта</td>
+                <td class="input__info currency"></td>
+            </tr>
+
+            <tr class="tr-dark">
+                <td colspan="2" >Публичное должностное лицо</td>
+            </tr>
+
+            <tr>
+                <td>Должность</td>
+                <td class="input__info pdl_position"></td>
+            </tr>
+            <tr>
+                <td>Фамилия</td>
+                <td class="input__info pdl_surname"></td>
+            </tr>
+            <tr>
+                <td>Имя</td>
+                <td class="input__info pdl_name"></td>
+            </tr>
+            <tr>
+                <td>Отчество</td>
+                <td class="input__info pdl_middlename"></td>
+            </tr>
+
+        </table>
+        
+    
+        <button type="button" onclick="tableToCSV()">
+            download CSV
+        </button>
+
+
+    <script src="client.js"></script>
+ 
+    <script type="text/javascript">
+        function tableToCSV() {
+ 
+            // Variable to store the final csv data
+            var csv_data = [];
+ 
+            // Get each row data
+            var rows = document.getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+ 
+                // Get each column data
+                var cols = rows[i].querySelectorAll('td,th');
+ 
+                // Stores each csv row data
+                var csvrow = [];
+                for (var j = 0; j < cols.length; j++) {
+ 
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                }
+ 
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+ 
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+ 
+            // Call this function to download csv file 
+            downloadCSVFile(csv_data);
+ 
+        }
+ 
+        function downloadCSVFile(csv_data) {
+ 
+            // Create CSV file object and feed
+            // our csv_data into it
+            CSVFile = new Blob([csv_data], {
+                type: "text/csv"
+            });
+ 
+            // Create to temporary link to initiate
+            // download process
+            var temp_link = document.createElement('a');
+ 
+            // Download csv file
+            let client = document.querySelector('.surname')
+            temp_link.download = client.textContent+".csv";
+            var url = window.URL.createObjectURL(CSVFile);
+            temp_link.href = url;
+ 
+            // This link should not be displayed
+            temp_link.style.display = "none";
+            document.body.appendChild(temp_link);
+ 
+            // Automatically click the link to
+            // trigger download
+            temp_link.click();
+            document.body.removeChild(temp_link);
+        }
+    </script>
+</body>
+ 
+</html>

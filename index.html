@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://www.mtsbank.ru/upload/static/favicons/favicon.ico"/>
+    <title>Анкета для заказа карты Ориенбанка</title>
+</head>
+<body>
+
+<div class="container container_banner">
+    <h1 class="title">Заявка на получение карты Ориёнбанк</h1>
+    <p class="subtitle">Оформите карту Ориёнбанка VISA Gold и платите за пределами РФ как обычно</p>
+</div>
+
+
+<div class="container container_form">
+    <h2 class="header">Персональные данные</h2>
+    <form action="" class="form" name="the_form" target="client.html">
+
+        <fieldset class="fieldset__inline fieldset__inline_personal">
+            <div class="inputWrapper">
+                <label for="last_name" class="input-label">Фамилия</label>
+                <input placeholder="" type="text" name="last_name" value="" class="input">
+            </div>
+            
+            <div class="inputWrapper">
+                <label for="first_name" class="input-label">Имя</label>
+                <input placeholder="" type="text" name="first_name" value="" class="input">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="middle_name" class="input-label">Отчество</label>
+                <input placeholder="" type="text" name="middle_name" value="" class="input">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="gender" class="input-label">Пол</label>
+                <select placeholder="Пол" type="text" name="gender" value="" class="input input_select">
+                    <option>Мужской</option>
+                    <option>Женский</option> 
+                </select>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="fieldset__inline fieldset__inline_birth">
+            <div class="inputWrapper">
+                <label for="date_of_birth" class="input-label">Дата рождения</label>
+                <input inputmode="numeric" type="date" name="date_of_birth" value="" class="input input_date" placeholder="дд.мм.гггг">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="place_of_birth" class="input-label">Место рождения</label>
+                <input placeholder="" type="text" name="place_of_birth" value="" class="input input_placeOfBirth">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="citizenship" class="input-label">Гражданство</label>
+                <input placeholder="" type="text" name="citizenship" value="" class="input">
+            </div>
+
+
+        </fieldset>
+
+</div>
+
+    <div class="container container_form">
+
+        <h2 class="header">Документ, удостоверяющий личность</h2>
+
+        <fieldset class="fieldset__inline fieldset__inline_passport">
+            <div class="inputWrapper">
+                <label for="type_of_document" class="input-label">Идентифицирующий документ</label>
+                <input placeholder="" type="text" name="type_of_document" value="Passport" class="input" disabled>
+            </div>
+            
+            <div class="inputWrapper">
+                <label for="passport_number" class="input-label">Номер паспорта</label>
+                <input placeholder="" type="text" name="passport_number" value="" class="input">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="issuing_authority" class="input-label">Орган, выдавший документ</label>
+                <input placeholder="" type="text" name="issuing_authority" value="Passport" class="input">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="date_of_issue" class="input-label">Дата выдачи</label>
+                <input inputmode="numeric" type="date" name="date_of_issue" value="" class="input input_date" placeholder="дд.мм.гггг">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="date_of_expired" class="input-label">Дата окончания срока действия</label>
+                <input inputmode="numeric" type="date" name="date_of_expired" value="" class="input input_date" placeholder="дд.мм.гггг">
+            </div>
+
+
+        </fieldset>
+
+    </div>
+
+    
+
+    <div class="container-twin">
+
+        <div class="container container_form container_nomargin-top">
+
+            <h2 class="header">Контактные данные</h2>
+    
+            <fieldset class="fieldset__inline fieldset__inline_contacts">
+                <div class="inputWrapper">
+                    <label for="telephone_number" class="input-label">Номер телефона</label>
+                    <input placeholder="+7" type="text" name="telephone_number" value="" class="input">
+                </div>
+                
+                <div class="inputWrapper">
+                    <label for="email" class="input-label">Адрес электронной почты</label>
+                    <input placeholder="" type="text" name="email" value="" class="input">
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="address" class="input-label">Адрес регистрации</label>
+                    <input placeholder="" type="text" name="address" value="" class="input">
+                </div>
+            </fieldset>
+
+        </div>
+
+
+        <div class="container container_form container_nomargin-top">
+
+            <h2 class="header">Тип карты</h2>
+    
+            <fieldset class="fieldset__inline fieldset__inline_contacts">
+                <div class="inputWrapper">
+                    <label for="telephone_number" class="input-label">Тип карты</label>
+                    <select placeholder="Пол" type="text" name="gender" value="" class="input input_select input_cardType">
+                        <option>Visa Gold</option>
+                        <option>Visa Classic</option> 
+                    </select>
+                </div>
+                
+                <div class="inputWrapper">
+                    <label for="email" class="input-label">Валюта карты</label>
+                    <select placeholder="Пол" type="text" name="gender" value="" class="input input_select">
+                        <option>USD</option>
+                        <option>EUR</option> 
+                    </select>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>
+
+    <div class="container container_form container_nomargin-top">
+
+        <h2 class="header">Адрес доставки карты в РФ</h2>
+
+        <fieldset class="fieldset__inline fieldset__inline_delivery">
+            <div class="inputWrapper">
+                <label for="card_delivery_address_in_russia" class="input-label">Адрес</label>
+                <input placeholder="" type="text" name="card_delivery_address_in_russia" value="Passport" class="input">
+            </div>
+        </fieldset>
+
+    </div>
+
+
+    
+
+    <div class="fpep">
+        <input type="checkbox" class="checkbox custom-checkbox" name="checkbox">
+        <label for="checkbox" class="checkbox">Родственник публичного должностного лица</label>
+        
+    </div>
+
+    <div class="container container_form fpepName invisible">
+
+        <h2 class="header">Публичное должностное лицо</h2>
+
+        <fieldset class="fieldset__inline fieldset__inline_passport">
+            <div class="inputWrapper">
+                <label for="fpep_position" class="input-label">Должность публичного должностного лица</label>
+                <input placeholder="" type="text" name="fpep_position" value="" class="input">
+            </div>
+            
+            <div class="inputWrapper">
+                <label for="fpep_last_name" class="input-label">Фамилия публичного должностного лица</label>
+                <input placeholder="" type="text" name="fpep_last_name" value="" class="input">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="fpep_first_name" class="input-label">Имя публичного должностного лица</label>
+                <input placeholder="" type="text" name="fpep_first_name" value="" class="input">
+            </div>
+
+            <div class="inputWrapper">
+                <label for="fpep_middle_name" class="input-label">Отчество публичного должностного лица</label>
+                <input type="text" name="fpep_middle_name" value="" class="input" placeholder="">
+            </div>
+
+        </fieldset>
+
+    </div>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+</div>
+    
+</body>
+
+<script src="script.js"></script>
+</html>
