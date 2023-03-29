@@ -254,6 +254,10 @@ fieldset {
     .input_placeOfBirth {
         width: 272px;
     }
+	
+	.input_cardType {
+    width: 100%;
+}
 
     .subtitle {
         font-size: 17px;
