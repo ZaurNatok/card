@@ -52,6 +52,9 @@ body {
 .input {
     padding: 15px 16px;
     -webkit-appearance: none;
+-webkit-appearance:none;
+-moz-appearance:none;
+-ms-appearance:none;
 }
 
 .inputWrapper {
@@ -62,7 +65,9 @@ input, select {
     border: 2px solid rgb(187, 193, 199);
     transition: border-color 200ms ease 0s;
     border-radius: 8px;
-
+-webkit-appearance:none;
+-moz-appearance:none;
+-ms-appearance:none;
     outline: none;
     font-size: 16px;
     width: -webkit-fill-available;
