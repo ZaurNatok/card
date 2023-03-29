@@ -275,6 +275,10 @@ fieldset {
     .fpep {
         width: calc(100% - 30px);
     }
+	
+	    .container_form {
+        max-width: calc(100% - 35px);
+    }
 }
 
 
