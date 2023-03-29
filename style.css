@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'MTS Sans';
-    src: url("./MTS/MTSSans-Regular.ttf") format("ttf");
-
+    src: url("./MTS/MTSSans-Regular.ttf") format("ttf"),
+    url("./MTS/mts_sans_regular.otf");
 }
 
 html {
