@@ -26,6 +26,8 @@ body {
 
 .container_button {
     height: fit-content;
+    display: flex;
+    align-items: center;
 }
 
 .container_banner {
@@ -270,7 +272,37 @@ fieldset {
     border: none;
   }
 
+.thanks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
 
+.thanks__content {
+    margin: auto;
+    text-align: center;
+}
+
+.ok {
+    width: 5vw;
+}
+
+.loader {
+    margin: auto;
+    border: 3px solid rgb(227, 6, 17);
+    border-left-color: #f2f3f7;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: load .5s linear infinite;
+    margin-left: 15px;
+    }
+    
+    @keyframes load {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+    }
 
 @media screen and (max-width:414px) {
     .container-twin {
