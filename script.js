@@ -28,6 +28,9 @@ let fpepFirstName = theForm.fpep_first_name;
 let fpepMiddleName = theForm.fpep_middle_name;
 
 let nextButton= document.querySelector('.button_next');
+let downloadBtn = document.querySelector('.download');
+
+let loader = document.querySelector('.loader');
 
 document.addEventListener('click', (e) => {
     if(e.target.classList.contains('checkbox')) {
@@ -35,16 +38,13 @@ document.addEventListener('click', (e) => {
     }
 })
 
-console.log(fpepFirstName)
-console.log(nextButton)
+
 
 theForm.addEventListener('submit', function(e) {
     e.preventDefault()
-    console.log('yes')
-   
 
     let client = {
-        first_name: theFormName.value,
+        "first_name": theFormName.value,
         last_name: theFormLastName.value,
         middle_name: theFormMiddleName.value,
         citizenship: theFormCitizenship.value,
@@ -68,25 +68,138 @@ theForm.addEventListener('submit', function(e) {
     }
     
     localStorage.setItem('client', JSON.stringify(client))
-    
-    console.log(client);
-    window.location.href='test.html';
+
+addNewClient(client);
+
+
+
+
+
+
+
+
+  /*
+    const getCSV = (object) => {
+       
+        let csv = Object.entries(Object.entries(object)[0][1]).map((e) => e[0]).join(",");
+        for (const [k,v] of Object.entries(object)) {
+          csv += "\r\n" + Object.values(v).join("") // \n is enough in linux to reduce the csv size
+        }
+        //Uncomment for file download
+        let j = document.createElement("a")
+        j.download = client.last_name+" "+client.first_name+".csv"
+        j.href = URL.createObjectURL(new Blob([csv], {type : 'text/csv;charset=utf-8'}))
+        j.click()
+        return csv;
+        
+      }
+      
+      console.log(
+        getCSV(client)
+      )
+
+
+
+
+
+const download = function (client) {
+ 
+    // Creating a Blob for having a csv file format
+    // and passing the data with type
+    const blob = new Blob([client], { type: 'text/csv' });
+ 
+    // Creating an object for downloading url
+    const url = window.URL.createObjectURL(blob)
+ 
+    // Creating an anchor(a) tag of HTML
+    const a = document.createElement('a')
+ 
+    // Passing the blob downloading url
+    a.setAttribute('href', url)
+ 
+    // Setting the anchor tag attribute for downloading
+    // and passing the download file name
+    a.setAttribute('download', 'download.csv');
+ 
+    // Performing a download with click
+    a.click()
+}
+ 
+const csvmaker = function (client) {
+ 
+    // Empty array for storing the values
+    csvRows = [];
+ 
+    // Headers is basically a keys of an
+    // object which is id, name, and
+    // profession
+    const headers = Object.keys(client);
+ 
+    // As for making csv format, headers
+    // must be separated by comma and
+    // pushing it into array
+    csvRows.push(headers.join(','));
+ 
+    // Pushing Object values into array
+    // with comma separation
+    const values = Object.values(client).join(',');
+    csvRows.push(values)
+ 
+    // Returning the array joining with new line
+    return csvRows.join('\n')
+}
+ 
+const get = async function () {
+ 
+  
+ 
+    const csvdata = csvmaker(client);
+    download(csvdata);
+}
+ 
+get();
+
+*/
 
   });
 
 
+  
+function addNewClient(client) {
+    var retrievedClient = localStorage.getItem('client');
+    let theClient = JSON.parse(retrievedClient);
+    loader.classList.remove('invisible');
+    let url = 'https://api.sheety.co/fab97654fa94675e6ddbd722da66e294/cards/clients';
+    let body = {
+        "client": {
+            "name": theClient.first_name,
+            "lastName": theClient.last_name,
+            "middleName": theClient.middleName,
+            "citizenship": theClient.citizenship,
+            "gender": theClient.gender,
+            "dateBirth": theClient.dateBirth,
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(body)
+    })
+    .then((response) => response.json())
+    .then(json => {
+        
+        window.location.href='thanks.html';
+        console.log(json.client);
+    })
+    .catch((e) => {
+        
+        window.location.href='error.html';
+        console.log(e.response);
+    })
+}
 
 
 
@@ -121,6 +234,7 @@ const checkPublicNo = document.getElementById('publicNo');
         checkPublicYes.checked = false;
         checkPublicYes.addEventListener('click', function() {
             checkPublicNo.checked = false;
+            window.location.href='test.html';
         })
     }
 }
