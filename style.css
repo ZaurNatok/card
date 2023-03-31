@@ -318,6 +318,14 @@ fieldset {
     width: 100%;
 }
 
+.ok {
+    width: 25vw;
+}
+
+.thanks__text {
+    padding: 0 10px;
+}
+
     .subtitle {
         font-size: 17px;
         width: 100%;
