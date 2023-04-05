@@ -229,8 +229,8 @@ function addNewClient(client) {
     })
     .then((response) => response.json())
     .then(json => {
-        
         loader.classList.add('invisible');
+        window.location.href='thanks.html';
         console.log(json.client);
     })
     .catch((e) => {
