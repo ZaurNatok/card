@@ -84,7 +84,15 @@ function fpep() {
 
     if (fpepName.classList.contains('invisible')) {
                     return "Нет";
+                    fpepPosition.removeAttribute('required');
+                    fpepLastName.removeAttribute('required');
+                    fpepFirstName.removeAttribute('required');
+                    fpepMiddleName.removeAttribute('required');
                     } else { 
+                        fpepPosition.setAttribute('required', '');
+                        fpepLastName.setAttribute('required', '');
+                        fpepFirstName.setAttribute('required', '');
+                        fpepMiddleName.setAttribute('required', '');
                         return "Да";
                           }
  }
