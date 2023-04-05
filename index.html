@@ -24,22 +24,22 @@
         <fieldset class="fieldset__inline fieldset__inline_personal">
             <div class="inputWrapper">
                 <label for="last_name" class="input-label">Фамилия</label>
-                <input placeholder="" type="text" name="last_name" value="" class="input">
+                <input placeholder="" type="text" name="last_name" value="" class="input" required>
             </div>
             
             <div class="inputWrapper">
                 <label for="first_name" class="input-label">Имя</label>
-                <input placeholder="" type="text" name="first_name" value="" class="input">
+                <input placeholder="" type="text" name="first_name" value="" class="input" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="middle_name" class="input-label">Отчество</label>
-                <input placeholder="" type="text" name="middle_name" value="" class="input">
+                <input placeholder="" type="text" name="middle_name" value="" class="input" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="gender" class="input-label">Пол</label>
-                <select placeholder="Пол" type="text" name="gender" value="" class="input input_select">
+                <select placeholder="Пол" type="text" name="gender" value="" class="input input_select" required>
                     <option>Мужской</option>
                     <option>Женский</option> 
                 </select>
@@ -50,17 +50,17 @@
         <fieldset class="fieldset__inline fieldset__inline_birth">
             <div class="inputWrapper">
                 <label for="date_of_birth" class="input-label">Дата рождения</label>
-                <input inputmode="numeric" type="date" name="date_of_birth" value="" class="input input_date" placeholder="дд.мм.гггг">
+                <input inputmode="numeric" type="date" name="date_of_birth" value="" class="input input_date" placeholder="дд.мм.гггг" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="place_of_birth" class="input-label">Место рождения</label>
-                <input placeholder="" type="text" name="place_of_birth" value="" class="input input_placeOfBirth">
+                <input placeholder="" type="text" name="place_of_birth" value="" class="input input_placeOfBirth" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="citizenship" class="input-label">Гражданство</label>
-                <input placeholder="" type="text" name="citizenship" value="" class="input">
+                <input placeholder="" type="text" name="citizenship" value="" class="input" required>
             </div>
 
 
@@ -75,27 +75,27 @@
         <fieldset class="fieldset__inline fieldset__inline_passport">
             <div class="inputWrapper">
                 <label for="type_of_document" class="input-label">Идентифицирующий документ</label>
-                <input placeholder="" type="text" name="type_of_document" value="Passport" class="input" disabled>
+                <input placeholder="" type="text" name="type_of_document" value="Passport" class="input" required disabled>
             </div>
             
             <div class="inputWrapper">
                 <label for="passport_number" class="input-label">Номер паспорта</label>
-                <input placeholder="" type="text" name="passport_number" value="" class="input">
+                <input placeholder="" type="text" name="passport_number" value="" class="input" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="issuing_authority" class="input-label">Орган, выдавший документ</label>
-                <input placeholder="" type="text" name="issuing_authority" value="" class="input">
+                <input placeholder="" type="text" name="issuing_authority" value="" class="input" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="date_of_issue" class="input-label">Дата выдачи</label>
-                <input inputmode="numeric" type="date" name="date_of_issue" value="" class="input input_date" placeholder="дд.мм.гггг">
+                <input inputmode="numeric" type="date" name="date_of_issue" value="" class="input input_date" placeholder="дд.мм.гггг" required>
             </div>
 
             <div class="inputWrapper">
                 <label for="date_of_expired" class="input-label">Дата окончания срока действия</label>
-                <input inputmode="numeric" type="date" name="date_of_expired" value="" class="input input_date" placeholder="дд.мм.гггг">
+                <input inputmode="numeric" type="date" name="date_of_expired" value="" class="input input_date" placeholder="дд.мм.гггг" required>
             </div>
 
 
@@ -114,17 +114,17 @@
             <fieldset class="fieldset__inline fieldset__inline_contacts">
                 <div class="inputWrapper">
                     <label for="telephone_number" class="input-label">Номер телефона</label>
-                    <input placeholder="+7" type="text" name="telephone_number" value="" class="input">
+                    <input placeholder="+7" type="text" name="telephone_number" value="" class="input" required>
                 </div>
                 
                 <div class="inputWrapper">
                     <label for="email" class="input-label">Адрес электронной почты</label>
-                    <input placeholder="" type="text" name="email" value="" class="input">
+                    <input placeholder="" type="text" name="email" value="" class="input" required>
                 </div>
 
                 <div class="inputWrapper">
                     <label for="address" class="input-label">Адрес регистрации</label>
-                    <input placeholder="" type="text" name="address" value="" class="input">
+                    <input placeholder="" type="text" name="address" value="" class="input" required>
                 </div>
             </fieldset>
 
@@ -138,7 +138,7 @@
             <fieldset class="fieldset__inline fieldset__inline_contacts">
                 <div class="inputWrapper">
                     <label for="telephone_number" class="input-label">Тип карты</label>
-                    <select placeholder="Пол" type="text" name="card_type" value="" class="input input_select input_cardType">
+                    <select placeholder="Пол" type="text" name="card_type" value="" class="input input_select input_cardType" required>
                         <option>Visa Gold</option>
                         <option>Visa Classic</option> 
                     </select>
@@ -146,7 +146,7 @@
                 
                 <div class="inputWrapper">
                     <label for="email" class="input-label">Валюта карты</label>
-                    <select placeholder="Пол" type="text" name="card_ccy" value="" class="input input_select">
+                    <select placeholder="Пол" type="text" name="card_ccy" value="" class="input input_select" required>
                         <option>USD</option>
                         <option>EUR</option> 
                     </select>
@@ -164,7 +164,7 @@
         <fieldset class="fieldset__inline fieldset__inline_delivery">
             <div class="inputWrapper">
                 <label for="card_delivery_address_in_russia" class="input-label">Адрес</label>
-                <input placeholder="" type="text" name="card_delivery_address_in_russia" value="" class="input">
+                <input placeholder="" type="text" name="card_delivery_address_in_russia" value="" class="input" required>
             </div>
         </fieldset>
 
