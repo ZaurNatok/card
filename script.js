@@ -202,20 +202,20 @@ function addNewClient(client) {
             "placeBirth": theClient.placeBirth,
             "docType": theClient.docType,
             "docNumber": theClient.docNumber,
-            "DateIssue": theClient.docDateIssued,
-            "DateExpired": theClient.docDateExpired,
-            "IssuingAuthority": theClient.docIssued,
-            "Phone": theClient.phone,
-            "Email": theClient.email,
-            "Address": theClient.address,
-            "CardType": theClient.paymentSystem,
+            "dateIssue": theClient.docDateIssued,
+            "dateExpired": theClient.docDateExpired,
+            "issuingAuthority": theClient.docIssued,
+            "phone": theClient.phone,
+            "email": theClient.email,
+            "address": theClient.address,
+            "cardType": theClient.paymentSystem,
             "currency": theClient.currency,
-            "Fpep": theClient.fpep,
-            "FpepPosition": theClient.fpepPosition,
-            "FpepLastName": theClient.fpepLastName,
-            "FpepFirstName": theClient.fpepFirstName,
-            "FpepMiddleName": theClient.fpepMiddleName,
-            "DeliveryAddress": theClient.deliveryAddress
+            "fpep": theClient.fpep,
+            "fpepPosition": theClient.fpepPosition,
+            "fpepLastName": theClient.fpepLastName,
+            "fpepFirstName": theClient.fpepFirstName,
+            "fpepMiddleName": theClient.fpepMiddleName,
+            "deliveryAddress": theClient.deliveryAddress
         }
     }
 
