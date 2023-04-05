@@ -229,7 +229,7 @@ function addNewClient(client) {
     .then((response) => response.json())
     .then(json => {
         
-        window.location.href='thanks.html';
+        
         console.log(json.client);
     })
     .catch((e) => {
