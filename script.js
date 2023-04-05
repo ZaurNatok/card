@@ -58,7 +58,7 @@ theForm.addEventListener('submit', function(e) {
         dateBirth: theFormDateBirth.value,
         placeBirth: theFormPlaceBirth.value,
         docType: theFormDocType.value,
-        DocNumber: theFormDocNumber.value,
+        docNumber: theFormDocNumber.value,
         docIssued: theFormDocIssued.value,
         docDateIssued: theFormDocDateIssued.value,
         docDateExpired: theFormDocDateExpired.value,
@@ -83,9 +83,9 @@ addNewClient(client);
 function fpep() {
 
     if (fpepName.classList.contains('invisible')) {
-                    return "Да";
+                    return "Нет";
                     } else { 
-                        return "Нет";
+                        return "Да";
                           }
  }
 
@@ -193,6 +193,7 @@ function addNewClient(client) {
     let url = 'https://api.sheety.co/fab97654fa94675e6ddbd722da66e294/cards/clients';
     let body = {
         "client": {
+            "date": theClient.date,
             "name": theClient.first_name,
             "lastName": theClient.last_name,
             "middleName": theClient.middle_name,
