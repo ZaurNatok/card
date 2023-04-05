@@ -230,11 +230,11 @@ function addNewClient(client) {
     .then((response) => response.json())
     .then(json => {
         
-        
+        loader.classList.add('invisible');
         console.log(json.client);
     })
     .catch((e) => {
-        
+        loader.classList.add('invisible');
         window.location.href='error.html';
         console.log(e.response);
     })
