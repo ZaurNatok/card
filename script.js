@@ -44,10 +44,12 @@ document.addEventListener('click', (e) => {
 theForm.addEventListener('submit', function(e) {
     e.preventDefault()
     
-    
+    let date = dateFormat(new Date());
+    let isFpep = fpep();
 
 
     let client = {
+        date: date,
         first_name: theFormName.value,
         last_name: theFormLastName.value,
         middle_name: theFormMiddleName.value,
@@ -56,7 +58,7 @@ theForm.addEventListener('submit', function(e) {
         dateBirth: theFormDateBirth.value,
         placeBirth: theFormPlaceBirth.value,
         docType: theFormDocType.value,
-        docNumber: theFormDocNumber.value,
+        DocNumber: theFormDocNumber.value,
         docIssued: theFormDocIssued.value,
         docDateIssued: theFormDocDateIssued.value,
         docDateExpired: theFormDocDateExpired.value,
@@ -70,7 +72,7 @@ theForm.addEventListener('submit', function(e) {
         fpepFirstName: fpepFirstName.value,
         fpepMiddleName: fpepMiddleName.value,
         deliveryAddress: deliveryAddress.value,
-        fpep: fpep()
+        fpep: isFpep
         }
     
     localStorage.setItem('client', JSON.stringify(client))
@@ -88,7 +90,12 @@ function fpep() {
  }
 
 
+function dateFormat(date) {
+    var theDate = date.getDate()  + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " +
+    date.getHours() + ":" + date.getMinutes();
 
+    return theDate;
+}
 
 
   /*
@@ -181,6 +188,7 @@ get();
 function addNewClient(client) {
     var retrievedClient = localStorage.getItem('client');
     let theClient = JSON.parse(retrievedClient);
+    console.log(theClient);
     loader.classList.remove('invisible');
     let url = 'https://api.sheety.co/fab97654fa94675e6ddbd722da66e294/cards/clients';
     let body = {
@@ -196,6 +204,7 @@ function addNewClient(client) {
             "docNumber": theClient.docNumber,
             "DateIssue": theClient.docDateIssued,
             "DateExpired": theClient.docDateExpired,
+            "IssuingAuthority": theClient.docIssued,
             "Phone": theClient.phone,
             "Email": theClient.email,
             "Address": theClient.address,
