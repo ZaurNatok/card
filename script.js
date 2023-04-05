@@ -44,6 +44,7 @@ document.addEventListener('click', (e) => {
 theForm.addEventListener('submit', function(e) {
     e.preventDefault()
     
+    
 
 
     let client = {
@@ -69,11 +70,7 @@ theForm.addEventListener('submit', function(e) {
         fpepFirstName: fpepFirstName.value,
         fpepMiddleName: fpepMiddleName.value,
         deliveryAddress: deliveryAddress.value,
-        fpep:     if (fpepName.classList.contains(invisible)) {
-                    return true;
-                    } else { 
-                        return false 
-                          }
+        fpep: fpep()
         }
     
     localStorage.setItem('client', JSON.stringify(client))
@@ -81,7 +78,14 @@ theForm.addEventListener('submit', function(e) {
 addNewClient(client);
 
 
+function fpep() {
 
+    if (fpepName.classList.contains(invisible)) {
+                    return "Да";
+                    } else { 
+                        return "Нет";
+                          }
+ }
 
 
 
@@ -197,11 +201,7 @@ function addNewClient(client) {
             "Address": theClient.address,
             "CardType": theClient.paymentSystem,
             "currency": theClient.currency,
-            "Fpep": if (theClient.fpep = true) {
-                    return "Да";
-                    } else { 
-                        eturn "Нет" 
-                          },
+            "Fpep": theClient.fpep,
             "FpepPosition": theClient.fpepPosition,
             "FpepLastName": theClient.fpepLastName,
             "FpepFirstName": theClient.fpepFirstName,
