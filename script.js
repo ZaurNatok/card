@@ -18,6 +18,7 @@ let theFormDocDateExpired = theForm.date_of_expired;
 let address = theForm.address;
 let phone = theForm.telephone_number;
 let email = theForm.email;
+let deliveryAddress = theForm.card_delivery_address_in_russia;
 
 let paymentSystem = theForm.card_type;
 let currency = theForm.card_ccy;
@@ -42,9 +43,11 @@ document.addEventListener('click', (e) => {
 
 theForm.addEventListener('submit', function(e) {
     e.preventDefault()
+    
+
 
     let client = {
-        "first_name": theFormName.value,
+        first_name: theFormName.value,
         last_name: theFormLastName.value,
         middle_name: theFormMiddleName.value,
         citizenship: theFormCitizenship.value,
@@ -64,8 +67,14 @@ theForm.addEventListener('submit', function(e) {
         fpepPosition: fpepPosition.value,
         fpepLastName: fpepLastName.value,
         fpepFirstName: fpepFirstName.value,
-        fpepMiddleName: fpepMiddleName.value
-    }
+        fpepMiddleName: fpepMiddleName.value,
+        deliveryAddress: deliveryAddress.value,
+        fpep:     if (fpepName.classList.contains(invisible)) {
+                    return true;
+                    } else { 
+                        return false 
+                          }
+        }
     
     localStorage.setItem('client', JSON.stringify(client))
 
@@ -174,10 +183,30 @@ function addNewClient(client) {
         "client": {
             "name": theClient.first_name,
             "lastName": theClient.last_name,
-            "middleName": theClient.middleName,
+            "middleName": theClient.middle_name,
             "citizenship": theClient.citizenship,
             "gender": theClient.gender,
             "dateBirth": theClient.dateBirth,
+            "placeBirth": theClient.placeBirth,
+            "docType": theClient.docType,
+            "docNumber": theClient.docNumber,
+            "DateIssue": theClient.docDateIssued,
+            "DateExpired": theClient.docDateExpired,
+            "Phone": theClient.phone,
+            "Email": theClient.email,
+            "Address": theClient.address,
+            "CardType": theClient.paymentSystem,
+            "currency": theClient.currency,
+            "Fpep": if (theClient.fpep = true) {
+                    return "Да";
+                    } else { 
+                        eturn "Нет" 
+                          },
+            "FpepPosition": theClient.fpepPosition,
+            "FpepLastName": theClient.fpepLastName,
+            "FpepFirstName": theClient.fpepFirstName,
+            "FpepMiddleName": theClient.fpepMiddleName,
+            "DeliveryAddress": theClient.deliveryAddress
         }
     }
 
