@@ -298,6 +298,16 @@ fieldset {
     animation: load .5s linear infinite;
     margin-left: 15px;
     }
+
+    .upload {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .passports {
+        width: 100%;
+    }
     
     @keyframes load {
     0% {transform:rotate(0deg);}
