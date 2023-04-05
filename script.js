@@ -80,7 +80,7 @@ addNewClient(client);
 
 function fpep() {
 
-    if (fpepName.classList.contains(invisible)) {
+    if (fpepName.classList.contains('invisible')) {
                     return "Да";
                     } else { 
                         return "Нет";
